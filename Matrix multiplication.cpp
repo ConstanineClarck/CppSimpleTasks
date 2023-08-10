@@ -60,7 +60,7 @@ int main()
         cout << "Количество столбцов первой матрицы не совпадают с колличесвтом строк второой матрицыэрицы';
         cout << endl;
     }
-    int **matrixRESULTAT = new int *[];
+    int **matrixRESULTAT = new int *[H];
     
     
     for(int i(0); i < H; i++)
