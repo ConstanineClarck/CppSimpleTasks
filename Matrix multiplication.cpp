@@ -31,23 +31,36 @@ int main()
     
     for(int i(0); i < H; i++)
     {
+            matrix1[i] = new int [L];
+    }
+    for(int i(0); i < H; i++)
+    {
         for(int j(0); j < L; j++)
         {
-            matrix1[i][j] = new int []
+            int Meaning_of_matrices1 = rand();
+            matrix1[i][j] = Meaning_of_matrices1;
         }
     }
     
-    for(int ii(0); ii < Q; ii++)
+    for(int i(0); i < U; i++)
     {
-        for(int jj(0); jj < U; jj++)
+            matrix1[i] = new int [L];
+    }
+    for(int i(0); i < Q; i++)
+    {
+        for(int j(0); j < U; j++)
         {
-            
+            int Meaning_of_matrices2 = rand();
+            matrix2[i][j] = Meaning_of_matrices2;
         }
     }
     
     if(L != Q)
     {
         //cout << "Количество столбцов первой матрицы не совпадают с колличесвтом строк второой матрицыэрицы';    }
+    }
+    int **matrixRESULTAT = new int *[];
+    
     
     for(int i(0); i < H; i++)
     {
@@ -55,8 +68,8 @@ int main()
         {
             for(int k(0); k < H; k++)
             {
-                int result = matrix1[j][k] * matrix2[k][j];
-                RESULT += resul;
+                int result = matrix1[i][k] * matrix2[k][j];
+                RESULT += result;
                 
             }
             
@@ -65,6 +78,19 @@ int main()
         
         
     }
+    
+    for(int i(0); i < L; i++)
+    {
+        delete [] matrix1[i];
+        delete [] matrix2[i];
+        delete [] matrixRESULTAT[i];
+    }
+    
+    delete [] matrix1;
+    delete [] matrix2;
+    delete [] matrixRESULTAT;
 
     return 0;
-}
+}       
+
+
