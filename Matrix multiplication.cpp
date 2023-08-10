@@ -57,8 +57,7 @@ int main()
     
     if(L != Q)
     {
-        cout << "Количество столбцов первой матрицы не совпадают с колличесвтом строк второой матрицыэрицы';
-        cout << endl;
+        cout << "Количество столбцов первой матрицы не совпадают с колличесвтом строк второой матрицыэрицы";
     }
     int **matrixRESULTAT = new int *[H];
     
@@ -80,6 +79,15 @@ int main()
         
     }
     
+    for(int i(0); i < H; i++)
+    {
+        for(int j(0); j < U; j++)
+        {
+            cout << matrixRESULTAT[i][j] << " ";
+        }
+        cout << endl;
+    }
+    
     for(int i(0); i < L; i++)
     {
         delete [] matrix1[i];
@@ -93,5 +101,3 @@ int main()
 
     return 0;
 }       
-
-
