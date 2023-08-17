@@ -9,8 +9,22 @@
 
 using namespace std;
 
-int MATRIX_LOAD(
-
+void MATRIX_LOAD(int **MATRIX, H, L);
+void MATRIX_RESULT_LOAD(int **MATRI, H, U)
+{
+      
+    for(int i(0); i < H; i++)
+    {
+        matrixRESULT[i] = new int [U];
+    }
+    for(int i(0); i < H; i++)
+        {
+            for(int j(0); j < U; j++)
+                {
+                    matrixRESULTAT[i][j] = 0;
+                }
+        }
+}
 
 int main()
 {
@@ -29,45 +43,14 @@ int main()
     
     int **matrix1 = new int *[H];
     int **matrix2 = new int *[Q];
-    
-    
-    
-    for(int i(0); i < H; i++)
-    {
-            matrix1[i] = new int [L];
-    }
-    for(int i(0); i < H; i++)
-    {
-        for(int j(0); j < L; j++)
-        {
-            int Meaning_of_matrices1 = rand();
-            matrix1[i][j] = Meaning_of_matrices1;
-        }
-    }
-    
-    for(int i(0); i < Q; i++)
-    {
-            matrix1[i] = new int [U];
-    }
-    for(int i(0); i < Q; i++)
-    {
-        for(int j(0); j < U; j++)
-        {
-            int Meaning_of_matrices2 = rand();
-            matrix2[i][j] = Meaning_of_matrices2;
-        }
-    }
-
     int **matrixRESULTAT = new int *[H];
-    for(int i(0); i < H; i++)
-    {
-        matrixRESULT[i] = new int [U];
-    }
-    for(int i(0); i < H; i++)
-        {
-            for(int j(0); j < U; j++)
-                {
-                    matrixRESULTAT[i] = 0;
+    
+    MATRIX_LOAD(int **matrix), H, L);
+    MATRIX_LOAD(int **matrix2), Q, U);
+    MATRIX_RESULT_LOAD(int **matrixRESULTAT, H, U);
+
+
+  
                     
     if(L != Q)
     {
@@ -116,3 +99,23 @@ int main()
 
     return 0;
 }       
+
+void MATRIX_LOAD(int **MATRIX, H, L)
+{
+    srand(time(NULL));
+    for(int i(0); i < H; i++)
+    {
+         matrix1[i] = new int [L];
+    }
+    for(int i(0); i < H; i++)
+    {
+        for(int j(0); j < L; j++)
+        {
+            int Meaning_of_matrices1 = rand();
+            matrix1[i][j] = Meaning_of_matrices1;
+        }
+    }
+    
+}
+
+
