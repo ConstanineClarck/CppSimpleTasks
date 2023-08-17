@@ -9,22 +9,8 @@
 
 using namespace std;
 
-void MATRIX_LOAD(int **MATRIX, H, L);
-void MATRIX_RESULT_LOAD(int **MATRI, H, U)
-{
-      
-    for(int i(0); i < H; i++)
-    {
-        matrixRESULT[i] = new int [U];
-    }
-    for(int i(0); i < H; i++)
-        {
-            for(int j(0); j < U; j++)
-                {
-                    matrixRESULTAT[i][j] = 0;
-                }
-        }
-}
+void MATRIX_LOAD(int **MATRIX, H, L);   // Функция для заполнения певрой и второй матрицы
+void MATRIX_RESULT_LOAD(int **MATRI, H, U);   // Функция для заполнения результироующей матрицы нулями
 
 int main()
 {
@@ -52,10 +38,11 @@ int main()
 
   
                     
-    if(L != Q)
+    while(L != Q)   // Проверка на то, можно ли умножать матрицы
     {
         cout << "Количество столбцов первой матрицы не совпадают с колличесвтом строк второой матрицыэрицы";
         system("cls");
+        
     }
     
     
@@ -118,4 +105,21 @@ void MATRIX_LOAD(int **MATRIX, H, L)
     
 }
 
+
+
+void MATRIX_RESULT_LOAD(int **MATRI, H, U)
+{
+      
+    for(int i(0); i < H; i++)
+    {
+        matrixRESULT[i] = new int [U];
+    }
+    for(int i(0); i < H; i++)
+        {
+            for(int j(0); j < U; j++)
+                {
+                    matrixRESULTAT[i][j] = 0;
+                }
+        }
+}
 
