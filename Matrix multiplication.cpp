@@ -9,6 +9,9 @@
 
 using namespace std;
 
+int MATRIX_LOAD(
+
+
 int main()
 {
     int RESULT = 0; // Временная переменная для сложения умноженых ячеек первой и второй матрицы перед передачей их в результирующую матрицу
@@ -42,9 +45,9 @@ int main()
         }
     }
     
-    for(int i(0); i < U; i++)
+    for(int i(0); i < Q; i++)
     {
-            matrix1[i] = new int [L];
+            matrix1[i] = new int [U];
     }
     for(int i(0); i < Q; i++)
     {
@@ -54,17 +57,29 @@ int main()
             matrix2[i][j] = Meaning_of_matrices2;
         }
     }
-    
+
+    int **matrixRESULTAT = new int *[H];
+    for(int i(0); i < H; i++)
+    {
+        matrixRESULT[i] = new int [U];
+    }
+    for(int i(0); i < H; i++)
+        {
+            for(int j(0); j < U; j++)
+                {
+                    matrixRESULTAT[i] = 0;
+                    
     if(L != Q)
     {
         cout << "Количество столбцов первой матрицы не совпадают с колличесвтом строк второой матрицыэрицы";
+        system("cls");
     }
-    int **matrixRESULTAT = new int *[H];
+    
     
     
     for(int i(0); i < H; i++)
     {
-        for(int j(0); j << L; j++)
+        for(int j(0); j << U; j++)
         {
             for(int k(0); k < H; k++)
             {
