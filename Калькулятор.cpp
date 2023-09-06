@@ -4,9 +4,34 @@
 
 *******************************************************************************/
 #include <iostream>
-#include <stdio.h>
+#include <conio.h>
 
 using namespace std;
+
+
+void input(char &S, double &x1, double &x2);
+void REsULT (char &S, double &x1, double &x2);
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    
+    char S;
+    double x1;
+    double x2;
+    while(S != 'q')
+    {
+        
+
+
+        input(S, x1, x2);
+        REsULT(S, x1, x2);
+    }
+    
+
+    return 0;
+}
 
 
 void input(char &S, double &x1, double &x2)
@@ -19,26 +44,9 @@ void input(char &S, double &x1, double &x2)
     cin >> x2;
     cout << endl;
 }
-void REsULT (char &S, double &x1, double &x2);
 
 
-int main()
-{
-    setlocale(LC_ALL, "Russian");
-    
-    double x1;
-    double x2;
-    
-    char S;
-    
-    input(S, x1, x2);
-    REsULT(S, x1, x2);
-   
-    
-    
 
-    return 0;
-}
 
 
 void REsULT (char &S, double &x1, double &x2)
